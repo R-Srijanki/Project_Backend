@@ -16,7 +16,7 @@ export async function register(req,res) {
         res.status(201).json({newUser});
     }
     catch(err){
-        res.status(500).json({"error occured during registering user":err});
+        return res.status(500).json({"error occured during registering user":err});
     }
     
 }
@@ -43,6 +43,6 @@ export async function login(req,res) {
         });
     }
     catch(err){
-        res.status(500).json({"error occured during login":err});
+        return res.status(500).json({"error occured during login":err});
     }
 }
