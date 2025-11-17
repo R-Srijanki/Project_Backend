@@ -33,7 +33,7 @@ export async function login(req,res) {
         if(!validPassword){
             return res.status(401).json({"message":"Invalid user details"});
         }
-        let token=jwt.sign({id:exists.id},"SECRETKEY");
+        let token=jwt.sign({id:exists.id},"SECRETKEY",{expiresIn:"7d"});
         return res.status(200).json({
             user:{
                 name:data.name,
