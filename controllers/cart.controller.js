@@ -22,7 +22,7 @@ export async function addToCart(req,res) {
         res.status(200).json(cart);
     }
     catch(err){
-        return res.status(500).json("error occurred in adding product to cart");
+        return res.status(500).json({"error occurred in adding product to cart":err.message});
     }
 }
 
@@ -38,16 +38,16 @@ export async function updateCart(req,res) {
         if(product && product.stock<quantity) return res.status(400).json({"message":"insufficient stock"});
         item.quantity=quantity;
         res.json(cart);
-        
     }
     catch(err){
-         return res.status(500).json("error occurred while updating product quantity to cart");
+         return res.status(500).json({"error occurred while updating product quantity to cart":err.message});
     }
 }
 
 export async function removeProduct(req,res) {
     try{
         const {productId}=req.body;
+        if(!productId) return res.status(400).json({"message":"productId required"});
         const cart=await getCartForUser(req.user._id);
         const newItems=cart.items.filter(i=>i.product!=productId);
         cart.items=newItems;
@@ -55,7 +55,7 @@ export async function removeProduct(req,res) {
         res.json(cart);
     }
     catch(err){
-         return res.status(500).json("error occurred while removing product from cart");
+         return res.status(500).json({"error occurred while removing product from cart":err.message});
     }
 }
 
@@ -66,6 +66,6 @@ export async function getCart(req,res) {
         res.json(cart);
     }
     catch(err){
-         return res.status(500).json("error occurred while fetching cart");
+         return res.status(500).json({"error occurred while fetching cart":err.message});
     }
 }

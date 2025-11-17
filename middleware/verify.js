@@ -13,10 +13,10 @@ export default function verifyToken(req,res,next){
                 req.user = data;     
                 next();           
             });
-     }
-     else  return res.status(403).json({message:"token not found"})
+        }
+        else  return res.status(403).json({message:"token not found"})
     }
     catch(err){
-        return res.status(500).json({message:"error during verifying token"})
+        return res.status(500).json({"error during verifying token":err.message});
     }
 }

@@ -9,7 +9,7 @@ export async function getProducts(req,res) {
         
     }
     catch(err){
-        return res.status(500).json({"error while fetching products": err})
+        return res.status(500).json({"error while fetching products": err.message})
     }
 }
 
@@ -22,7 +22,7 @@ export async function getproductbyid(req,res) {
         res.json({product});
     }
     catch(err){
-        return res.status(500).json({"error while fetching product": err})
+        return res.status(500).json({"error while fetching product": err.message})
     }
 }
 
