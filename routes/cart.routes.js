@@ -3,7 +3,7 @@ import verifyToken from "../middleware/verify.js";
 
 export default function cartRoutes(app){
     app.post("/api/cart",verifyToken,addToCart);
-    app.put("/api/cart",verifyToken,updateCart);
-    app.delete("/api/cart",verifyToken,removeProduct);
+    app.put("/api/cart/:productId",verifyToken,updateCart);
+    app.delete("/api/cart/:productId",verifyToken,removeProduct);
     app.get("/api/cart",verifyToken,getCart);
 }

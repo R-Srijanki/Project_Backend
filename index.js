@@ -17,12 +17,14 @@ db.on("error",()=>{
 })
 // middlewares that handles both json and urlencoded data
 app.use(express.json());
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
 app.use(cors());
-app.use(errorHandler);
+
 userRoutes(app);
 productRoutes(app);
 cartRoutes(app);
+
+app.use(errorHandler);
 app.listen(8000,()=>{
     console.log("Server listening on port 8000");
 })
