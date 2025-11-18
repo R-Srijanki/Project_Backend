@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-
+//product schema
 const productSchema=new mongoose.Schema({
     title:{type:String,required:true,unique:true},
     description:{type:String,required:true},
@@ -13,7 +13,6 @@ const productSchema=new mongoose.Schema({
     images:[String]},
     {timestamps:true},
 );
-
+//creates collection product in database
 export default mongoose.model('Product',productSchema);
 
-;

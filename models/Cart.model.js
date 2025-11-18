@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
-
+//mongoose schema for cart 
 const cartSchema=new mongoose.Schema({
     user:{
-        type:mongoose.Schema.Types.ObjectId, 
+        type:mongoose.Schema.Types.ObjectId, //gives us id of ref mentioned
         ref:'User',
         required:true,
         index:true
@@ -21,5 +21,5 @@ const cartSchema=new mongoose.Schema({
         }
     ]
 }, {timestamps:true});
-
+//creates collection carts in database
 export default mongoose.model('Cart',cartSchema);
