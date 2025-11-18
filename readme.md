@@ -25,6 +25,7 @@ This project fulfills all requirements of the assignment, including Products API
 - **CORS**
 
 ## 📁 Project Structure
+```
 ├── controllers/
 │   ├── user.controller.js
 │   ├── product.controller.js
@@ -42,7 +43,7 @@ This project fulfills all requirements of the assignment, including Products API
 │   └── cart.routes.js
 ├── index.js
 └── readme.md
-
+````
 ## ⚙️ Installation & Setup
 
 - 1. Clone the repository
@@ -198,14 +199,14 @@ items: [
 ```
 # ✅ Successful API Responses (ThunderClient):
 
-/api/products
-/api/product/:id
-/api/login
-/api/register
-/api/cart POST
-/api/cart GET
-/api/cart/:productId PUT
-/api/cart/:productId DELETE
+- /api/products GET
+- /api/product/:id GET
+- /api/login  POST
+- /api/register POST
+- /api/cart POST
+- /api/cart GET
+- /api/cart/:productId PUT
+- /api/cart/:productId DELETE
 
 # 📝 Notes
 - Cart operations are fully protected.
