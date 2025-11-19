@@ -4,7 +4,7 @@ import userRoutes from "./routes/user.routes.js";
 import productRoutes from "./routes/product.routes.js";
 import cartRoutes from "./routes/cart.routes.js";
 import cors from "cors";
-import errorHandler from "./middleware/errorHandler.js";
+import { notFoundHandler, globalErrorHandler } from "./middleware/errorHandler.js";
 
 const app= express();//creates server
 //cloud link on mongo atlas
@@ -29,7 +29,8 @@ userRoutes(app);
 productRoutes(app);
 cartRoutes(app);
 //global errorhandler
-app.use(errorHandler);
+app.use(notFoundHandler);
+app.use(globalErrorHandler);
 //server runs on port 8000
 app.listen(8000,()=>{
     console.log("Server listening on port 8000");
