@@ -11,7 +11,7 @@ const productSchema=new mongoose.Schema({
     category:String,
     thumbnail:String,
     images:[String]},
-    {timestamps:true},
+    {timestamps:true}
 );
 //creates collection product in database
 export default mongoose.model('Product',productSchema);

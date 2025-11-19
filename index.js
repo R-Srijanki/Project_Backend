@@ -6,7 +6,7 @@ import cartRoutes from "./routes/cart.routes.js";
 import cors from "cors";
 import errorHandler from "./middleware/errorHandler.js";
 
-const app=new express();//creates server
+const app= express();//creates server
 //cloud link on mongo atlas
 mongoose.connect("mongodb+srv://jankirathod999_db_user:H6i46vyt5LaafdJZ@cluster0.pdt2k5e.mongodb.net/");
 //database connection 
@@ -34,5 +34,3 @@ app.use(errorHandler);
 app.listen(8000,()=>{
     console.log("Server listening on port 8000");
 })
-//jankirathod999_db_user
-//H6i46vyt5LaafdJZ

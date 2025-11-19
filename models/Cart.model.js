@@ -5,6 +5,7 @@ const cartSchema=new mongoose.Schema({
         type:mongoose.Schema.Types.ObjectId, //gives us id of ref mentioned
         ref:'User',
         required:true,
+        unique:true,
         index:true
     },
     items:[
